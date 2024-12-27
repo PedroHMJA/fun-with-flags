@@ -1,6 +1,15 @@
-const Card = ({ country, capital, region, population }) => {
+type CardProps = {
+    country: string;
+    capital: string;
+    region: string;
+    population: string;
+}
+
+
+
+const Card = ({ id, country, capital, region, population } : CardProps) => {
     return (
-        <div className="h-full overflow-hidden bg-white rounded-lg shadow-lg">
+        <div id={id} className="h-full overflow-hidden bg-white rounded-lg shadow-lg">
             <div className="aspect-video w-full">
                 <img src="https://placehold.co/600x400" className="w-full h-full object-cover"/>
             </div>
