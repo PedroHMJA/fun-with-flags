@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Header, Footer, Card, Grid } from './components';
 import { countriesApi } from './services';
+import Link from 'next/link';
 
 
 
@@ -53,7 +54,8 @@ export default function Home() {
           const { common:countryName } = name ?? {};
           const [capitalName] = capital ?? [];
           
-          return ( 
+          return (
+          <Link key={cca3} href={`/country/${cca3}`}>
           <Card
           key={cca3}
           index={index}
@@ -62,9 +64,10 @@ export default function Home() {
           capital={capitalName}
           region={region}
           population={population}
-        />
-      );
-    }
+          />
+          </Link>
+        );
+      }
       )}
       </Grid>
       </main>
